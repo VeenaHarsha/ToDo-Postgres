@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script  type="module" src="list.js"></script>
+    
+    <title>To Do</title>
+</head>
+<body>
+        <div id="nav-1" class="nav-bar">
+            <button id="newList" class="block-1" >New List</button>
+            <div id="myDIV" class="btn-group">
+                <button id="list-id" class="block-2 active">Lists</button>
+                <button id="today-id" class="block-2">Today</button>
+                <button id="sch-id" class="block-2">Scheduled</button>
+            </div>
+            <button id="searchBtn" class="block-3" ><img src='images/search-7.png' alt="Search" width='15' height='15'><span>Search</span></button>
+        </div>
+
+        <div id="nav-2" class="nav-bar" style="display: none;">
+            <button id="goBack" class="block-1">Back</button>
+            <button id="filterBtn" class="block-4"><img src="images/filter-2.png" alt="Filter" width='20' height='30'><span>Clear Completed Tasks</span></span></button>
+        </div>
+    <div class="list-container">
+        <div id="list-form" style="display:none;">
+            <input type="text" id="list-name" placeholder="Add List..." required>
+            <!-- <input type="submit" id="crListBtn" value="Create List" class="button"> -->
+        </div>
+        <div id="search-form" style="display:none;">
+            <input type="text" id="search-name" placeholder="Search.." required>
+            <!-- <input type="submit" id="srListBtn" value="Search" class="button"> -->
+        </div>
+        <div id="main-div-list"> </div>
+        <div id="rename-list"></div>
+    </div>
+    <!---Add Task  -->
+    <div class="task-container">
+            <div class="show-taskList">
+                <div id="task-div-2" class="task-div"> </div>
+                <div class="show-more-info" style="display:none;">
+                        <div>
+                            <textarea id="task-note" name="tasknote" rows="10" col="10" placeholder="add notes..."
+                                required></textarea>
+                        </div>
+                        <div class="block-5">
+                            <div>
+                                <label>Due Date</label>
+                                <input id="due-date" type="date" name="duedate" value="" required>
+                            </div>
+                            <div>
+                                <label>Priority</label>
+                                <select id="prId">
+                                    <option value="3">High</option>
+                                    <option value="2">Medium</option>
+                                    <option value="1">Low</option>
+                                </select>
+                            </div>
+                            <div class="t-block-btn">
+                                <input type="submit" id='updateTask' value="Update" class="button">
+                                <input type="submit" id='delTaskBtn' value="Delete" class="button">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="tdiv">
+                        <input type="text" id="task-name" placeholder="Add New Task...">
+                    </div>
+            </div>
+    </div>
+    <div id="today" class="today-container" style="display: none;">
+        <div id="today-task" class="scheduled-task"> </div>
+    </div>
+    <div id="sch" class="sch-container" style="display: none;">
+        <div id="sch-task" class="scheduled-task"> </div>
+    </div>
+</body>
+</html>
