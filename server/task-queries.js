@@ -1,12 +1,4 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'dbtodo',
-  password: 'qwerty',
-  port: 5432
-})
-
+const pool = require('./db')
 const getTasks = (request, response) => {
   pool.query('SELECT * FROM tasks ORDER BY ID ASC', (error, results) => {
     if (error) {
