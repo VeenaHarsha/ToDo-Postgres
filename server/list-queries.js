@@ -1,11 +1,4 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'postgres',
-  password: 'qwerty',
-  host: 'localhost',
-  database: 'dbtodo',
-  port: 5432
-})
+const pool = require('./db')
 
 const getList = (request, response) => {
   pool.query('SELECT * FROM list ORDER BY ID ASC', (error, results) => {
